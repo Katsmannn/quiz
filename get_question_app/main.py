@@ -11,7 +11,7 @@ from database import SessionLocal, engine
 url = 'https://jservice.io/api/random'
 params = {'count': 1}
 
-MAX_FAILS = 50  # max numbers of fail query
+MAX_FAILS = 50  # max numbers of failed requests
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -35,7 +35,7 @@ def get_guestion_count(db: Session = Depends(get_db)):
 @app.post('/get_questions/')
 async def get_questions(query: schemas.MyQuery, db: Session = Depends(get_db)):
     questions = []
-    fails = 0
+    fails = 0  # failed requests
 
     async with aiohttp.ClientSession() as session:
 
