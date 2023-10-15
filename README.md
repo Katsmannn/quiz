@@ -30,7 +30,7 @@ DB_PASSWORD = # пароль PostgreSQL
 4. Собрать и запустить Docker контейнеры с бд и приложением:
 ```
 $ sudo docker-compose build
-$ sudo docker-compose run
+$ sudo docker-compose up
 ```
 
 Доступные эндпоинты:  
